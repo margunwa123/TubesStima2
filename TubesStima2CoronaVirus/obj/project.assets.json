@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Semester_IV\\Tubes & tucil\\Stima\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Semester_IV\\Tubes & tucil\\Stima\\TubesStima2\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus.csproj",
       "projectName": "TubesStima2CoronaVirus",
-      "projectPath": "C:\\Users\\Asus\\Desktop\\Semester_IV\\Tubes & tucil\\Stima\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus.csproj",
+      "projectPath": "C:\\Users\\Asus\\Desktop\\Semester_IV\\Tubes & tucil\\Stima\\TubesStima2\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asus\\Desktop\\Semester_IV\\Tubes & tucil\\Stima\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus\\obj\\",
+      "outputPath": "C:\\Users\\Asus\\Desktop\\Semester_IV\\Tubes & tucil\\Stima\\TubesStima2\\TubesStima2CoronaVirus\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -3,78 +3,32 @@ using System.Collections.Generic;
 
 namespace TubesStima2CoronaVirus
 {
-    class TxtReader
-    {
-        protected string[] linesInFile;
-        protected string path;
-        public TxtReader(string path)
-        {
-            this.path = path;
-            linesInFile = System.IO.File.ReadAllLines(path);
-        }
-        public int getNumber()
-        {
-            int number = (int) char.GetNumericValue(linesInFile[0][0]);
-            return number;
-        }
-        public void getNumber(bool X)
-        {
-            if(X)
-            {
-                Console.WriteLine(linesInFile[0][0]);
-            }
-        }
-        public void printAllLines()
-        {
-            foreach (string line in linesInFile)
-            {
-                Console.WriteLine(line);
-            }
-        }
-    }
-    class PopulationReader : TxtReader
-    {
-        private Dictionary<char, int> populationPerCity;
-        public PopulationReader(string path) : base(path)
-        {
-            int population;
-            char city;
-            if(linesInFile.Length > 0)
-            {
-                for (int i = 1; i < linesInFile.Length; i++)
-                {
-                    city = linesInFile[i][0];
-                    population = int.Parse(linesInFile[i].Substring(2));
-                    populationPerCity.Add(city, population);
-                }
-            }
-        }
-        public char getKotaAwal()
-        {
-            return this.linesInFile[0][2];
-        }
-
-    }
-    class GraphReader : TxtReader
-    {
-        public GraphReader(string path) : base(path)
-        {
-
-        }
-    }
-    struct TrailElement
+    // ! GRAPH
+    class TrailElement
     {
         public char trail;
         public double probability;
+        public TrailElement(char trail, double probability)
+        {
+            this.trail       = trail;
+            this.probability = probability;
+        }
     }
     class GraphElement
     {
         public char node;
+        public int population;
         public List<TrailElement> trails;
-        public GraphElement(char node)
+        public GraphElement(char node, int population)
         {
             trails = new List<TrailElement>();
+            this.population = population;
             this.node = node;
+        }
+        public GraphElement(char node) : this(node, 0) {}
+        public void addPopulation(int population)
+        {
+            this.population += population;
         }
     }
     class Graph
@@ -90,9 +44,41 @@ namespace TubesStima2CoronaVirus
                 GraphElement temp = new GraphElement(idx);
                 nodes.Add(temp);
             }
-            this.size = numOfNodes;
+            size = numOfNodes;
         }
-        public Graph() : this(10) { }
+        public Graph() : this(0) { }
+        public Graph(PopulationReader populationReader, GraphReader graphReader) : this()
+        {
+            size = populationReader.getBanyakKota();
+            foreach((char city, int population) in populationReader.populationPerCity)
+            {
+                nodes.Add(new GraphElement(city, population));
+            }
+            int iterator = 0;
+            foreach ((char cityInGraph, List<TrailElement> trails) in graphReader.connectionsAndProbability)
+            {
+                int indexOfCity = indexOf(cityInGraph);
+                foreach (TrailElement trail in trails)
+                {
+                    nodes[indexOfCity].trails.Add(new TrailElement(trail.trail, trail.probability));
+                }
+                iterator++;
+            }
+            
+        }
+        public int indexOf(char city)
+        {
+            int iterator = 0;
+            foreach(GraphElement node in nodes)
+            {
+                if(node.node == city)
+                {
+                    return iterator;
+                }
+                iterator++;
+            }
+            return -1;
+        }
         public void addElement(char index)
         {
             if (nodesContain(index) > -1)
@@ -124,9 +110,7 @@ namespace TubesStima2CoronaVirus
             int trailIndex = nodesContain(trailElement);
             if (nodeIndex > -1 && trailIndex > -1)
             {
-                TrailElement temp;
-                temp.probability = probability;
-                temp.trail = trailElement;
+                TrailElement temp = new TrailElement(trailElement, probability);
                 nodes[nodeIndex].trails.Add(temp);
             }
             else
@@ -151,14 +135,11 @@ namespace TubesStima2CoronaVirus
     {
         static void Main(string[] args)
         {
-            Graph A = new Graph();
-            string num = "A 5000";
-            A.addTrail('A', 'B', 0.5);
+            string mainPath = "../../../assets/";
+            GraphReader Graph = new GraphReader(mainPath + "Graph.txt");
+            PopulationReader Populasi = new PopulationReader(mainPath + "Populasi.txt");
+            Graph A = new Graph(Populasi, Graph);
             A.printInfo();
-            TxtReader Graph = new TxtReader("C:/Users/Asus/Desktop/Semester_IV/Tubes & tucil/Stima/TubesStima2CoronaVirus/TubesStima2CoronaVirus/Graph.txt");
-            TxtReader Populasi = new TxtReader("C:/Users/Asus/Desktop/Semester_IV/Tubes & tucil/Stima/TubesStima2CoronaVirus/TubesStima2CoronaVirus/Populasi.txt");
-            Graph.printAllLines();
-            Console.WriteLine(int.Parse(num.Substring(2)));
         }
     }
 }
