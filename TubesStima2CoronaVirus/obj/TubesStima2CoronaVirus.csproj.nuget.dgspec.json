@@ -1,0 +1,59 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Asus\\Desktop\\Semester_IV\\Tubes & tucil\\Stima\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Asus\\Desktop\\Semester_IV\\Tubes & tucil\\Stima\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Semester_IV\\Tubes & tucil\\Stima\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus.csproj",
+        "projectName": "TubesStima2CoronaVirus",
+        "projectPath": "C:\\Users\\Asus\\Desktop\\Semester_IV\\Tubes & tucil\\Stima\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Asus\\Desktop\\Semester_IV\\Tubes & tucil\\Stima\\TubesStima2CoronaVirus\\TubesStima2CoronaVirus\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
