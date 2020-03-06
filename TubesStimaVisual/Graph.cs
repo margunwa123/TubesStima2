@@ -52,12 +52,12 @@ namespace TubesStimaVisual
         public Graph(PopulationReader populationReader, GraphReader graphReader) : this()
         {
             size = populationReader.getBanyakKota();
-            foreach ((char city, int population) in populationReader.populationPerCity)
+            foreach (var(city, population) in populationReader.populationPerCity.Select(X=>(X.Key, X.Value)))
             {
                 nodes.Add(new GraphElement(city, population));
             }
             int iterator = 0;
-            foreach ((char cityInGraph, List<TrailElement> trails) in graphReader.connectionsAndProbability)
+            foreach (var(cityInGraph, trails) in graphReader.connectionsAndProbability.Select(X=>(X.Key, X.Value)))
             {
                 int indexOfCity = indexOf(cityInGraph);
                 foreach (TrailElement trail in trails)

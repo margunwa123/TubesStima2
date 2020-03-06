@@ -34,7 +34,7 @@ namespace TubesStimaVisual
         }
         public void printPopulation()
         {
-            foreach ((char city, int population) in populationPerCity)
+            foreach (var(city,population) in populationPerCity.Select(X=>(X.Key,X.Value)))
             {
                 Console.WriteLine("Population City {0} : {1}", city, population);
             }

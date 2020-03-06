@@ -1,0 +1,5 @@
+C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.Form1.resources
+C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.Properties.Resources.resources
+C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.csproj.CoreCompileInputs.cache
