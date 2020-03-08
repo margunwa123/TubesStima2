@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TubesStimaVisual.src.GraphClass;
 
-namespace TubesStimaVisual
+namespace TubesStimaVisual.src.FileReaderClass
 {
     class PopulationReader : TxtReader
     {
@@ -30,11 +31,11 @@ namespace TubesStimaVisual
         }
         public char getKotaAwal()
         {
-            return this.linesInFile[0][2];
+            return linesInFile[0][2];
         }
         public void printPopulation()
         {
-            foreach (var(city,population) in populationPerCity.Select(X=>(X.Key,X.Value)))
+            foreach (var (city, population) in populationPerCity.Select(X => (X.Key, X.Value)))
             {
                 Console.WriteLine("Population City {0} : {1}", city, population);
             }

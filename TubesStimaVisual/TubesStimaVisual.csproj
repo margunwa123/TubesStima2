@@ -46,24 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="ShowGraph.cs">
+    <Compile Include="src\GraphClass\Class1.cs" />
+    <Compile Include="src\GraphClass\TrailElement.cs" />
+    <Compile Include="src\GraphClass\GraphElement.cs" />
+    <Compile Include="src\ShowGraph.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShowGraph.Designer.cs">
+    <Compile Include="src\ShowGraph.Designer.cs">
       <DependentUpon>ShowGraph.cs</DependentUpon>
     </Compile>
-    <Compile Include="Graph.cs" />
-    <Compile Include="FileReader.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="src\GraphClass\Graph.cs" />
+    <Compile Include="src\FileReaderClass\FileReader.cs" />
+    <Compile Include="src\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="src\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="src\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -75,7 +77,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ShowGraph.resx">
+    <EmbeddedResource Include="src\ShowGraph.resx">
       <DependentUpon>ShowGraph.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -89,7 +91,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="src\App.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\Populasi.txt" />
