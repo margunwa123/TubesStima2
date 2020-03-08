@@ -80,19 +80,5 @@ namespace TubesStimaVisual
             int number = (int)char.GetNumericValue(linesInFile[0][0]);
             return number;
         }
-        public void getNumber(bool X)
-        {
-            if (X)
-            {
-                Console.WriteLine(linesInFile[0][0]);
-            }
-        }
-        public void printAllLines()
-        {
-            foreach (string line in linesInFile)
-            {
-                Console.WriteLine(line);
-            }
-        }
     }
 }

@@ -20,17 +20,27 @@ namespace TubesStimaVisual
     {
         public char node;
         public int population;
+        public int timeInfected;
+        public bool isInfected;
         public List<TrailElement> trails;
-        public GraphElement(char node, int population)
+        public GraphElement(char node, int population, bool isInfected, int timeInfected)
         {
             trails = new List<TrailElement>();
             this.population = population;
             this.node = node;
+            this.isInfected = isInfected;
+            this.timeInfected = timeInfected;
         }
+        public GraphElement(char node, int population) : this(node, population, false, -1) { }
         public GraphElement(char node) : this(node, 0) { }
-        public void addPopulation(int population)
+        public void setKotaAwal()
         {
-            this.population += population;
+            timeInfected = 0;
+            isInfected   = true;
+        }
+        public void setInfectedTrue()
+        {
+            isInfected = true;
         }
     }
     class Graph
@@ -42,7 +52,8 @@ namespace TubesStimaVisual
             nodes = new List<GraphElement>();
             for (int i = 0; i < numOfNodes; i++)
             {
-                char idx = (char)(65 + i);
+                int ASCIIChar = 65 + i;
+                char idx = (char) ASCIIChar;
                 GraphElement temp = new GraphElement(idx);
                 nodes.Add(temp);
             }
@@ -56,10 +67,11 @@ namespace TubesStimaVisual
             {
                 nodes.Add(new GraphElement(city, population));
             }
+            nodes[IndexOf(populationReader.getKotaAwal())].setKotaAwal();
             int iterator = 0;
             foreach (var(cityInGraph, trails) in graphReader.connectionsAndProbability.Select(X=>(X.Key, X.Value)))
             {
-                int indexOfCity = indexOf(cityInGraph);
+                int indexOfCity = IndexOf(cityInGraph);
                 foreach (TrailElement trail in trails)
                 {
                     nodes[indexOfCity].trails.Add(new TrailElement(trail.trail, trail.probability));
@@ -68,22 +80,20 @@ namespace TubesStimaVisual
             }
 
         }
-        public int indexOf(char city)
+        public int IndexOf(char city)
         {
-            int iterator = 0;
-            foreach (GraphElement node in nodes)
+            for(int i = 0; i < size; i++)
             {
-                if (node.node == city)
+                if(nodes[i].node == city)
                 {
-                    return iterator;
+                    return i;
                 }
-                iterator++;
             }
-            return -1;
+            return -1; //kalo gaada
         }
         public void addElement(char index)
         {
-            if (nodesContain(index) > -1)
+            if (IndexOf(index) > -1)
             {
                 GraphElement temp = new GraphElement(index);
                 nodes.Add(temp);
@@ -93,32 +103,11 @@ namespace TubesStimaVisual
         {
             nodes.Insert(index, temp);
         }
-        public int nodesContain(char node)
-        {
-            int i = 0;
-            foreach (GraphElement val in nodes)
-            {
-                if (val.node == node)
-                {
-                    return i;
-                }
-                i++;
-            }
-            return -1;
-        }
         public void addTrail(char nodeElement, char trailElement, double probability)
         {
-            int nodeIndex = nodesContain(nodeElement);
-            int trailIndex = nodesContain(trailElement);
-            if (nodeIndex > -1 && trailIndex > -1)
-            {
-                TrailElement temp = new TrailElement(trailElement, probability);
-                nodes[nodeIndex].trails.Add(temp);
-            }
-            else
-            {
-                Console.WriteLine("Node tidak ada");
-            }
+            int nodeIndex = IndexOf(nodeElement);
+            TrailElement temp = new TrailElement(trailElement, probability);
+            nodes[nodeIndex].trails.Add(temp);
         }
         public void printInfo()
         {
@@ -131,6 +120,10 @@ namespace TubesStimaVisual
                 }
                 Console.WriteLine();
             }
+        }
+        public void setCityInfected(char city)
+        {
+            nodes[IndexOf(city)].setInfectedTrue();
         }
     }
 }
