@@ -37,7 +37,6 @@
             this.populationPath = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.clock = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // title
@@ -114,21 +113,11 @@
             this.clock.Text = "00:00:00 AM";
             this.clock.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 319);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 17);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Test";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.clock);
             this.Controls.Add(this.populationPath);
             this.Controls.Add(this.label1);
@@ -155,7 +144,6 @@
         private System.Windows.Forms.TextBox populationPath;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label clock;
-        private System.Windows.Forms.Label label2;
     }
 }
 
