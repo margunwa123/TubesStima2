@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\GraphClass\Class1.cs" />
+    <Compile Include="src\FileReaderClass\PopulationReader.cs" />
+    <Compile Include="src\FileReaderClass\GraphReader.cs" />
+    <Compile Include="src\GraphClass\Rumus.cs" />
     <Compile Include="src\GraphClass\TrailElement.cs" />
     <Compile Include="src\GraphClass\GraphElement.cs" />
     <Compile Include="src\ShowGraph.cs">

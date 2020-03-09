@@ -42,8 +42,9 @@ namespace TubesStimaVisual.src.GraphClass
                 }
                 iterator++;
             }
-
         }
+        public Graph(string populationPath, string graphPath) : this(new PopulationReader(populationPath), new GraphReader(graphPath))
+        { }
         public int IndexOf(char city)
         {
             for(int i = 0; i < size; i++)
@@ -82,7 +83,20 @@ namespace TubesStimaVisual.src.GraphClass
             nodes[IndexOf(city)].setInfectedTrue();
         }
 
-        
+        public List<string> infoGraphInListOfString()
+        {
+            List<string> result = new List<string>();
+            foreach(GraphElement val in nodes)
+            {
+                string deskripsiKota = "Kota " + val.node + "dengan populasi " + val.population + " dan hubungan : ";
+                foreach(TrailElement trailEl in val.trails)
+                {
+                    deskripsiKota += (trailEl.trail + ", " + trailEl.probability + " ");
+                }
+                result.Add(deskripsiKota);
+            }
+            return result;
+        }
         //
         //METODE DEBUGGING
         //

@@ -37,6 +37,9 @@
             this.populationPath = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.clock = new System.Windows.Forms.Label();
+            this.showGraph = new System.Windows.Forms.Button();
+            this.aLabel = new System.Windows.Forms.Label();
+            this.aButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // title
@@ -54,9 +57,9 @@
             // 
             this.simulate.BackColor = System.Drawing.SystemColors.ControlLight;
             this.simulate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.simulate.Location = new System.Drawing.Point(320, 363);
+            this.simulate.Location = new System.Drawing.Point(405, 365);
             this.simulate.Name = "simulate";
-            this.simulate.Size = new System.Drawing.Size(152, 60);
+            this.simulate.Size = new System.Drawing.Size(121, 60);
             this.simulate.TabIndex = 1;
             this.simulate.Text = "Simulate!";
             this.simulate.UseVisualStyleBackColor = false;
@@ -113,11 +116,42 @@
             this.clock.Text = "00:00:00 AM";
             this.clock.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // showGraph
+            // 
+            this.showGraph.Location = new System.Drawing.Point(264, 365);
+            this.showGraph.Name = "showGraph";
+            this.showGraph.Size = new System.Drawing.Size(121, 60);
+            this.showGraph.TabIndex = 7;
+            this.showGraph.Text = "Starting Graph";
+            this.showGraph.UseVisualStyleBackColor = true;
+            // 
+            // aLabel
+            // 
+            this.aLabel.AutoSize = true;
+            this.aLabel.Location = new System.Drawing.Point(585, 184);
+            this.aLabel.Name = "aLabel";
+            this.aLabel.Size = new System.Drawing.Size(46, 17);
+            this.aLabel.TabIndex = 8;
+            this.aLabel.Text = "label2";
+            // 
+            // aButton
+            // 
+            this.aButton.Location = new System.Drawing.Point(564, 304);
+            this.aButton.Name = "aButton";
+            this.aButton.Size = new System.Drawing.Size(166, 37);
+            this.aButton.TabIndex = 9;
+            this.aButton.Text = "Check Graph";
+            this.aButton.UseVisualStyleBackColor = true;
+            this.aButton.Click += new System.EventHandler(this.AButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.aButton);
+            this.Controls.Add(this.aLabel);
+            this.Controls.Add(this.showGraph);
             this.Controls.Add(this.clock);
             this.Controls.Add(this.populationPath);
             this.Controls.Add(this.label1);
@@ -144,6 +178,9 @@
         private System.Windows.Forms.TextBox populationPath;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label clock;
+        private System.Windows.Forms.Button showGraph;
+        private System.Windows.Forms.Label aLabel;
+        private System.Windows.Forms.Button aButton;
     }
 }
 
