@@ -34,7 +34,7 @@ namespace TubesStimaVisual
         private void Timer1_Tick(object sender, EventArgs e)
         {
             DateTime Date = DateTime.Now;
-            string timeInHourMinuteSecondAMPM = Date.ToString().Substring(9);
+            string timeInHourMinuteSecondAMPM = Date.ToString().Substring(10);
             clock.Text = timeInHourMinuteSecondAMPM;
         }
 
