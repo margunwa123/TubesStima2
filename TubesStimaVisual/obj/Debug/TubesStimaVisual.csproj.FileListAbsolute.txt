@@ -9,3 +9,20 @@ C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisu
 C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.exe
 C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.pdb
 C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.Form2.resources
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\bin\Debug\TubesStimaVisual.exe.config
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\bin\Debug\TubesStimaVisual.exe
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\bin\Debug\TubesStimaVisual.pdb
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.csprojAssemblyReference.cache
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.Form1.resources
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.Properties.Resources.resources
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.Form2.resources
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.csproj.GenerateResource.cache
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.exe
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.pdb
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.dll
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.Drawing.dll
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.xml
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.Drawing.xml
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.GraphViewerGdi.xml
+E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.csproj.CopyComplete

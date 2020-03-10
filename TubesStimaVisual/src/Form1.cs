@@ -1,59 +1,59 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Windows.Forms;
-using TubesStimaVisual.src.FileReaderClass;
-using TubesStimaVisual.src.GraphClass;
+using System.Drawing;
 
 namespace TubesStimaVisual
 {
     public partial class Form1 : Form
     {
-        private Graph populationAndProbability;
-        private List<string> citiesDescription;
-        private int iterate;
         public Form1()
         {
             InitializeComponent();
+            this.Height = Screen.PrimaryScreen.Bounds.Height;
+            this.Width = Screen.PrimaryScreen.Bounds.Width;
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
+            groupBox1.Hide();
+            howToTitle.Hide();
+            howToStep.Hide();
+            label1.Hide();
+            title.Show();
+            playButton.Show();
+            howToButton.Show();
+            exitButton.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            clock.Text = DateTime.Now.ToString().Substring(9);
-            graphPath.Text = @"C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\assets\Graph.txt";
-            populationPath.Text = @"C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\assets\Populasi.txt";
-            iterate = 0;
+            groupBox1.Hide();
+            howToTitle.Hide();
+            howToStep.Hide();
+            label1.Hide();
+        }
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 ShowGraph = new Form2();
+            ShowGraph.ShowDialog();
+            this.Close();
         }
 
-        private void Timer1_Tick(object sender, EventArgs e)
+        private void howToButton_Click(object sender, EventArgs e)
         {
-            DateTime Date = DateTime.Now;
-            string timeInHourMinuteSecondAMPM = Date.ToString().Substring(10);
-            clock.Text = timeInHourMinuteSecondAMPM;
+            title.Hide();
+            playButton.Hide();
+            howToButton.Hide();
+            exitButton.Hide();
+            groupBox1.Show();
+            label1.Show();
+            howToTitle.Show();
+            howToStep.Show();
         }
 
-        private void Simulate_Click(object sender, EventArgs e)
+        private void exitButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                populationAndProbability = new Graph(populationPath.Text, graphPath.Text);
-                citiesDescription = populationAndProbability.infoGraphInListOfString();
-            }
-            catch (DirectoryNotFoundException exception)
-            {
-                MessageBox.Show(exception.Message);
-            }
-        }
-        private void AButton_Click(object sender, EventArgs e)
-        {
-            try { 
-                aLabel.Text = citiesDescription[iterate];
-                iterate++;
-            } catch (ArgumentOutOfRangeException indexOutOfRangeException)
-            {
-                iterate = 0;
-                aLabel.Text = citiesDescription[iterate];
-            }
+            this.Close();
         }
     }
 }
