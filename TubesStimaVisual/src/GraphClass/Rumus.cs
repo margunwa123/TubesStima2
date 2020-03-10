@@ -6,19 +6,30 @@ using System.Threading.Tasks;
 
 namespace TubesStimaVisual.src.GraphClass
 {
-    public partial class Graph
+    class Rumus
     {
-        public double getMasyarakatTerinfeksi(char city)
+        private const double GAMMA = 0.25;
+
+        public static int getJumlahMasyarakatTerinfeksi(GraphElement graphElement, int waktu)
         {
-            GraphElement kotaYangDimaksud = nodes[IndexOf(city)];
-            double fungsiLogistik = nodes[IndexOf(city)].population;
-            double denominator = 1 + (fungsiLogistik - 1) * Math.Pow(Math.E, -0.25 * (size - kotaYangDimaksud.timeInfected));
-            return fungsiLogistik / denominator;
+            Console.WriteLine("timeinfected: " + graphElement.timeInfected);
+            if(graphElement.timeInfected == GraphElement.WAKTUMASYARAKATBELUMTERINFEKSI)
+            {
+                return 0;
+            }
+            else
+            {
+                double populasiGraph = graphElement.population;
+                Console.WriteLine("populasi graph : " + populasiGraph);
+                double denominator = 1 + ((populasiGraph - 1) * Math.Pow(Math.E, -(GAMMA * (waktu))));
+                Console.WriteLine("denominator : " + denominator);
+                return (int) (populasiGraph / denominator);
+            }
         }
 
-        public double getPenyebaranVirus(GraphElement graphelmt, int trailkeBerapa)
+        public static bool cekVirusMenyebar(int masyarakatTerinfeksi, double peluangPerjalanan)
         {
-            return getMasyarakatTerinfeksi(graphelmt.node) * graphelmt.trails[trailkeBerapa].probability;
+            return (masyarakatTerinfeksi * peluangPerjalanan >= 1);
         }
     }
 }
