@@ -12,14 +12,15 @@ namespace TubesStimaVisual
             this.Height = Screen.PrimaryScreen.Bounds.Height;
             this.Width = Screen.PrimaryScreen.Bounds.Width;
         }
-        private void label1_Click(object sender, EventArgs e)
+        private void exitHowToButton_Click(object sender, EventArgs e)
         {
             groupBox1.Hide();
             howToTitle.Hide();
             howToStep.Hide();
-            label1.Hide();
+            exitHowToButton.Hide();
             title.Show();
-            playButton.Show();
+            subtitle.Show();
+            simulateButton.Show();
             howToButton.Show();
             exitButton.Show();
         }
@@ -29,9 +30,9 @@ namespace TubesStimaVisual
             groupBox1.Hide();
             howToTitle.Hide();
             howToStep.Hide();
-            label1.Hide();
+            exitHowToButton.Hide();
         }
-        private void playButton_Click(object sender, EventArgs e)
+        private void simulateButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form2 ShowGraph = new Form2();
@@ -42,15 +43,15 @@ namespace TubesStimaVisual
         private void howToButton_Click(object sender, EventArgs e)
         {
             title.Hide();
-            playButton.Hide();
+            subtitle.Hide();
+            simulateButton.Hide();
             howToButton.Hide();
             exitButton.Hide();
             groupBox1.Show();
-            label1.Show();
+            exitHowToButton.Show();
             howToTitle.Show();
             howToStep.Show();
         }
-
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
