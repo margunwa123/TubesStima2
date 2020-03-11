@@ -338,3 +338,8 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+*.pdb
+*.exe
+.vs/TubesStimaVisual/v16/.suo
+TubesStimaVisual/obj/Debug/TubesStimaVisual.csprojAssemblyReference.cache
+TubesStimaVisual/obj/Debug/TubesStimaVisual.pdb

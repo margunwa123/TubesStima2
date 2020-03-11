@@ -25,17 +25,13 @@ namespace TubesStimaVisual
                 graph.AddNode(Char.ToString(node));
                 Microsoft.Msagl.Drawing.Node temp = graph.FindNode(Char.ToString(node));
                 temp.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
-                foreach(TrailElement trailElement in graphElement.trails)
+                if(graphElement.timeInfected != GraphElement.WAKTUMASYARAKATBELUMTERINFEKSI)
                 {
-                    if (graphElement.timeInfected != GraphElement.WAKTUMASYARAKATBELUMTERINFEKSI)
-                    {
-                        temp.Attr.FillColor = Microsoft.Msagl.Drawing.Color.DarkSlateBlue;
-                        graph.AddEdge(Char.ToString(node), Char.ToString(trailElement.trail)).Attr.Color = Microsoft.Msagl.Drawing.Color.DarkSlateBlue;
-                    }
-                    else
-                    {
-                        graph.AddEdge(Char.ToString(node), Char.ToString(trailElement.trail)).Attr.Color = Microsoft.Msagl.Drawing.Color.White;
-                    }
+                    temp.Attr.FillColor = Microsoft.Msagl.Drawing.Color.DarkSlateBlue;
+                }
+                foreach (TrailElement trailElement in graphElement.trails)
+                {
+                    graph.AddEdge(Char.ToString(node), Char.ToString(trailElement.trail));
                 }
             }
 
