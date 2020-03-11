@@ -26,3 +26,10 @@ E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\T
 E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.Drawing.xml
 E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.GraphViewerGdi.xml
 E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.csproj.CopyComplete
+C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.dll
+C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.Drawing.dll
+C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.xml
+C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.Drawing.xml
+C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.GraphViewerGdi.xml
+C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.csproj.CopyComplete

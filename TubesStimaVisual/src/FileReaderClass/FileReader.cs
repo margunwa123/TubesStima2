@@ -13,8 +13,15 @@ namespace TubesStimaVisual.src.FileReaderClass
         protected string path;
         public TxtReader(string path)
         {
-            this.path = path;
-            linesInFile = System.IO.File.ReadAllLines(path);
+            try
+            {
+                this.path = path;
+                linesInFile = System.IO.File.ReadAllLines(path);
+            }
+            catch (ArgumentNullException e)
+            {
+                throw e;
+            }
         }
         public int getNumber()
         {

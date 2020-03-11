@@ -31,12 +31,13 @@
             this.graphOpen = new System.Windows.Forms.Button();
             this.populationLabel = new System.Windows.Forms.Label();
             this.graphLabel = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.showCurrentGraph = new System.Windows.Forms.Button();
             this.populationTextBox = new System.Windows.Forms.TextBox();
             this.graphTextBox = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.simulate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // graphOpen
@@ -62,26 +63,26 @@
             // graphLabel
             // 
             this.graphLabel.AutoSize = true;
-            this.graphLabel.Location = new System.Drawing.Point(387, 183);
+            this.graphLabel.Location = new System.Drawing.Point(387, 192);
             this.graphLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.graphLabel.Name = "graphLabel";
             this.graphLabel.Size = new System.Drawing.Size(0, 17);
             this.graphLabel.TabIndex = 2;
             // 
-            // button2
+            // showCurrentGraph
             // 
-            this.button2.Location = new System.Drawing.Point(356, 329);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.showCurrentGraph.Location = new System.Drawing.Point(511, 281);
+            this.showCurrentGraph.Margin = new System.Windows.Forms.Padding(4);
+            this.showCurrentGraph.Name = "showCurrentGraph";
+            this.showCurrentGraph.Size = new System.Drawing.Size(170, 79);
+            this.showCurrentGraph.TabIndex = 3;
+            this.showCurrentGraph.Text = "Show Current Graph";
+            this.showCurrentGraph.UseVisualStyleBackColor = true;
+            this.showCurrentGraph.Click += new System.EventHandler(this.showCurrentGraph_Click);
             // 
             // populationTextBox
             // 
-            this.populationTextBox.Location = new System.Drawing.Point(259, 203);
+            this.populationTextBox.Location = new System.Drawing.Point(259, 212);
             this.populationTextBox.Name = "populationTextBox";
             this.populationTextBox.Size = new System.Drawing.Size(100, 22);
             this.populationTextBox.TabIndex = 4;
@@ -95,7 +96,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(381, 203);
+            this.button3.Location = new System.Drawing.Point(381, 212);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 23);
             this.button3.TabIndex = 6;
@@ -105,34 +106,44 @@
             // 
             // simulate
             // 
-            this.simulate.Location = new System.Drawing.Point(562, 162);
+            this.simulate.Location = new System.Drawing.Point(324, 245);
             this.simulate.Name = "simulate";
-            this.simulate.Size = new System.Drawing.Size(75, 23);
+            this.simulate.Size = new System.Drawing.Size(90, 33);
             this.simulate.TabIndex = 7;
-            this.simulate.Text = "button4";
+            this.simulate.Text = "Simulate!";
             this.simulate.UseVisualStyleBackColor = true;
             this.simulate.Click += new System.EventHandler(this.simulate_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(257, 120);
+            this.label1.Location = new System.Drawing.Point(257, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Select a Graph File";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(258, 192);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Select a Population File";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 444);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.simulate);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.graphTextBox);
             this.Controls.Add(this.populationTextBox);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.showCurrentGraph);
             this.Controls.Add(this.graphLabel);
             this.Controls.Add(this.populationLabel);
             this.Controls.Add(this.graphOpen);
@@ -152,12 +163,13 @@
         private System.Windows.Forms.Button graphOpen;
         private System.Windows.Forms.Label populationLabel;
         private System.Windows.Forms.Label graphLabel;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button showCurrentGraph;
         private System.Windows.Forms.TextBox populationTextBox;
         private System.Windows.Forms.TextBox graphTextBox;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.OpenFileDialog openPopulation;
         private System.Windows.Forms.Button simulate;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

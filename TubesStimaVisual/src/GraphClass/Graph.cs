@@ -10,25 +10,13 @@ namespace TubesStimaVisual.src.GraphClass
     public partial class Graph
     {
         private Dictionary<char, GraphElement> nodes;
-        private int size;
         private char kotaAwal;
-        public Graph(int numOfNodes)
+        public Graph()
         {
             nodes = new Dictionary<char, GraphElement>();
-            for (int i = 0; i < numOfNodes; i++)
-            {
-                int ASCIIChar = 65 + i;
-                char idx = (char) ASCIIChar;
-                GraphElement temp = new GraphElement(idx);
-                nodes.Add(idx, temp);
-            }
-            size = numOfNodes;
-            kotaAwal = 'A';
         }
-        public Graph() : this(0) { }
         internal Graph(PopulationReader populationReader, GraphReader graphReader) : this()
         {
-            size = populationReader.getBanyakKota();
             foreach (var(city, population) in populationReader.populationPerCity.Select(X=>(X.Key, X.Value)))
             {
                 nodes.Add(city, new GraphElement(city, population));
@@ -46,21 +34,9 @@ namespace TubesStimaVisual.src.GraphClass
             }
         }
         public Graph(string populationPath, string graphPath) : this(new PopulationReader(populationPath), new GraphReader(graphPath)) { }
-        public void addElement(char index)
+        public Dictionary<char,GraphElement> getNodes()
         {
-            if (!nodes.ContainsKey(index))
-            {
-                GraphElement temp = new GraphElement(index);
-                nodes.Add(index, temp);
-            }
-        }
-        public GraphElement getElement(char index)
-        {
-            return nodes[index];
-        }
-        public void setElement(char index, GraphElement temp)
-        {
-            nodes[index] = temp;
+            return nodes;
         }
         public void addTrail(char nodeIndex, char trailElement, double probability)
         {
@@ -71,22 +47,15 @@ namespace TubesStimaVisual.src.GraphClass
         {
             nodes[city].timeInfected = timeInfected;
         }
-
-        public List<string> infoGraphInListOfString()
+        public GraphElement getElement(char index)
         {
-            List<string> result = new List<string>();
-            foreach(var(key,val) in nodes.Select(X=>(X.Key,X.Value)))
-            {
-                string deskripsiKota = "Kota " + key + " dengan populasi " + val.population + " dan hubungan : ";
-                foreach(TrailElement trailEl in val.trails)
-                {
-                    deskripsiKota += (trailEl.trail + ", " + trailEl.probability + " ");
-                }
-                deskripsiKota += "\n dengan waktu terinfeksi " + val.timeInfected + " dan jumlah yg terinfeksi" + val.jumlahMasyarakatTerinfeksi;
-                result.Add(deskripsiKota);
-            }
-            return result;
+            return nodes[index];
         }
+        public int getSize()
+        {
+            return nodes.Count;
+        }
+
         //
         //METODE DEBUGGING
         //
@@ -101,6 +70,21 @@ namespace TubesStimaVisual.src.GraphClass
                 }
                 Console.WriteLine();
             }
+        }
+        public List<string> infoGraphInListOfString()
+        {
+            List<string> result = new List<string>();
+            foreach (var (key, val) in nodes.Select(X => (X.Key, X.Value)))
+            {
+                string deskripsiKota = "Kota " + key + " dengan populasi " + val.population + " dan hubungan : ";
+                foreach (TrailElement trailEl in val.trails)
+                {
+                    deskripsiKota += (trailEl.trail + ", " + trailEl.probability + " ");
+                }
+                deskripsiKota += "\n dengan waktu terinfeksi " + val.timeInfected + " dan jumlah yg terinfeksi" + val.jumlahMasyarakatTerinfeksi;
+                result.Add(deskripsiKota);
+            }
+            return result;
         }
 
         public void solveBFS(int waktu)

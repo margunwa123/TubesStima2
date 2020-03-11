@@ -12,10 +12,10 @@ namespace TubesStimaVisual
     public partial class Form2 : Form
     {
         private Graph populationAndProbability;
-        private List<string> citiesDescription;
-        private int iterate;
         private string populationText;
         private string graphText;
+        Microsoft.Msagl.Drawing.Graph graph;
+        Microsoft.Msagl.GraphViewerGdi.GViewer viewer;
         public Form2()
         {
             InitializeComponent();
@@ -27,12 +27,9 @@ namespace TubesStimaVisual
         {
             graphTextBox.Text = @"E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\assets\Graph.txt";
             populationTextBox.Text = @"E:\Evan\Kuliah\Tugas\Semester 4\IF-2211 Strategi Algoritma\Tubes 2\TubesStima2\TubesStimaVisual\assets\Populasi.txt";
-            iterate = 0;
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            //populationAndProbability = new Graph(populationTextBox.Text, graphTextBox.Text);
-            //citiesDescription = populationAndProbability.infoGraphInListOfString();
             OpenFileDialog openGraph = new OpenFileDialog();
             openGraph.Title = "Select the Graph File";
             openGraph.Filter = "Text Files (*.txt) | *.txt";
@@ -44,28 +41,28 @@ namespace TubesStimaVisual
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void showCurrentGraph_Click(object sender, EventArgs e)
         {
-            Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+            viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             //create a graph object 
-            Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
-            //create the graph content 
-            graph.AddEdge("A", "B");
-            graph.AddEdge("A", "C");
-            graph.AddEdge("B", "A");
-            graph.AddEdge("B", "C");
-            graph.AddEdge("C", "A");
-            graph.AddEdge("C", "B");
+            graph = new Microsoft.Msagl.Drawing.Graph("graph");
+            foreach(var(node, graphElement) in populationAndProbability.getNodes().Select(T => (T.Key, T.Value)))
+            {
+                
+                graph.AddNode(Char.ToString(node));
+                Microsoft.Msagl.Drawing.Node temp = graph.FindNode(Char.ToString(node));
+                temp.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
 
-            Microsoft.Msagl.Drawing.Node a = graph.FindNode("A");
-            a.Attr.FillColor = Microsoft.Msagl.Drawing.Color.White;
-            a.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
-            Microsoft.Msagl.Drawing.Node b = graph.FindNode("B");
-            b.Attr.FillColor = Microsoft.Msagl.Drawing.Color.White;
-            b.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
-            Microsoft.Msagl.Drawing.Node c = graph.FindNode("C");
-            c.Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
-            c.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
+                if (graphElement.timeInfected != GraphElement.WAKTUMASYARAKATBELUMTERINFEKSI)
+                {
+                    temp.Attr.FillColor = Microsoft.Msagl.Drawing.Color.Blue;
+                }
+                foreach(TrailElement trailElement in graphElement.trails)
+                {
+                    graph.AddEdge(Char.ToString(node), Char.ToString(trailElement.trail));
+                }
+            }
+
             //bind the graph to the viewer 
             viewer.Graph = graph;
             //associate the viewer with the form 
@@ -84,12 +81,21 @@ namespace TubesStimaVisual
             if (dr == DialogResult.OK)
             {
                 populationText = openPopulation.FileName;
+                populationTextBox.Text = populationText;
             }
         }
 
         private void simulate_Click(object sender, EventArgs e)
         {
-            populationAndProbability = new Graph()
+            try
+            {
+                populationAndProbability = new Graph(populationText, graphText);
+                populationAndProbability.solveBFS(5);
+            }
+            catch (ArgumentNullException argumentNullException)
+            {
+                MessageBox.Show(argumentNullException.Message);
+            }
         }
     }
 }
