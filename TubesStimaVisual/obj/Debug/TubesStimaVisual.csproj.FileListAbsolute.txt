@@ -33,3 +33,20 @@ C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisu
 C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.Drawing.xml
 C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.GraphViewerGdi.xml
 C:\Users\Asus\Desktop\Semester_IV\Tubes & tucil\Stima\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.csproj.CopyComplete
+C:\Users\vince\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.csprojAssemblyReference.cache
+C:\Users\vince\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.Form1.resources
+C:\Users\vince\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.Properties.Resources.resources
+C:\Users\vince\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.Form2.resources
+C:\Users\vince\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.csproj.GenerateResource.cache
+C:\Users\vince\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.exe
+C:\Users\vince\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.pdb
+C:\Users\vince\TubesStima2\TubesStimaVisual\bin\Debug\TubesStimaVisual.exe.config
+C:\Users\vince\TubesStima2\TubesStimaVisual\bin\Debug\TubesStimaVisual.exe
+C:\Users\vince\TubesStima2\TubesStimaVisual\bin\Debug\TubesStimaVisual.pdb
+C:\Users\vince\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.dll
+C:\Users\vince\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.Drawing.dll
+C:\Users\vince\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+C:\Users\vince\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.xml
+C:\Users\vince\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.Drawing.xml
+C:\Users\vince\TubesStima2\TubesStimaVisual\bin\Debug\Microsoft.Msagl.GraphViewerGdi.xml
+C:\Users\vince\TubesStima2\TubesStimaVisual\obj\Debug\TubesStimaVisual.csproj.CopyComplete
