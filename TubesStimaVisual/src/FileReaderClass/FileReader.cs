@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TubesStimaVisual.src.GraphClass;
+﻿using System.IO;
 
 namespace TubesStimaVisual.src.FileReaderClass
 {
@@ -16,11 +11,11 @@ namespace TubesStimaVisual.src.FileReaderClass
             try
             {
                 this.path = path;
-                linesInFile = System.IO.File.ReadAllLines(path);
+                linesInFile = File.ReadAllLines(path);
             }
-            catch (ArgumentNullException e)
+            catch(FileNotFoundException)
             {
-                throw e;
+                throw new FileNotFoundException("File dengan path \"" + path + "\" tidak ditemukan");
             }
         }
         public int getNumber()

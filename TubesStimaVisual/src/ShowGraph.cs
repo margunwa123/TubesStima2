@@ -9,10 +9,14 @@ namespace TubesStimaVisual
     public partial class Form2 : Form
     {
         private Graph populationAndProbability;
-        Microsoft.Msagl.Drawing.Graph graph;
-        Microsoft.Msagl.GraphViewerGdi.GViewer viewer;
+        private Microsoft.Msagl.Drawing.Graph graph;
+        private Microsoft.Msagl.GraphViewerGdi.GViewer viewer;
         public Form2(string populationText, string graphText, int days)
         {
+            if(days < 0)
+            {
+                throw new IndexOutOfRangeException("Day harus lebih besar atau sama dengan 0");
+            }
             InitializeComponent();
             populationAndProbability = new Graph(populationText, graphText);
             populationAndProbability.solveBFS(days);

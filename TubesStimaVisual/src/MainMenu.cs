@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using TubesStimaVisual.src.GraphClass;
 
@@ -132,27 +133,28 @@ namespace TubesStimaVisual
         {
             graphText = graphTextBox.Text;
             populationText = populationTextBox.Text;
-            int check = 0;
             try
             {
                 populationAndProbability = new Graph(populationText, graphText);
-                populationAndProbability.solveBFS(5);
-            }
-            catch (ArgumentNullException argumentNullException)
-            {
-                check = 1;
-                MessageBox.Show(argumentNullException.Message);
-            }
-            catch (ArgumentOutOfRangeException argumentException)
-            {
-                check = 1;
-                MessageBox.Show(argumentException.Message);
-            }
-            if (check == 0)
-            {
                 days = Convert.ToInt32(daysSpread.Text);
                 Form2 showGraph = new Form2(populationText, graphText, days);
                 showGraph.ShowDialog();
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("File yang anda masukan mungkin berformat salah");
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("File yang anda masukan mungkin berformat salah");
+            }
+            catch (FileNotFoundException fileNotFoundException)
+            {
+                MessageBox.Show( fileNotFoundException.Message );
+            }
+            catch (IndexOutOfRangeException indexOutOfRangeException)
+            {
+                MessageBox.Show(indexOutOfRangeException.Message);
             }
         }
     }
