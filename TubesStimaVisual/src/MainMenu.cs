@@ -130,6 +130,8 @@ namespace TubesStimaVisual
         }
         private void simulate_Click(object sender, EventArgs e)
         {
+            graphText = graphTextBox.Text;
+            populationText = populationTextBox.Text;
             int check = 0;
             try
             {
@@ -140,6 +142,11 @@ namespace TubesStimaVisual
             {
                 check = 1;
                 MessageBox.Show(argumentNullException.Message);
+            }
+            catch (ArgumentOutOfRangeException argumentException)
+            {
+                check = 1;
+                MessageBox.Show(argumentException.Message);
             }
             if (check == 0)
             {

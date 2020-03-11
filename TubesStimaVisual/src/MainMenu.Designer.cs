@@ -199,7 +199,6 @@
             this.populationTextBox.Name = "populationTextBox";
             this.populationTextBox.Size = new System.Drawing.Size(400, 29);
             this.populationTextBox.TabIndex = 4;
-            this.populationTextBox.Text = "  Type here";
             // 
             // graphTextBox
             // 
@@ -212,7 +211,6 @@
             this.graphTextBox.Name = "graphTextBox";
             this.graphTextBox.Size = new System.Drawing.Size(400, 29);
             this.graphTextBox.TabIndex = 5;
-            this.graphTextBox.Text = "  Type here";
             // 
             // populationOpen
             // 
@@ -384,6 +382,7 @@
             this.Controls.Add(this.tempBackgroundGlow1);
             this.Controls.Add(this.tempBackgroundGlow2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

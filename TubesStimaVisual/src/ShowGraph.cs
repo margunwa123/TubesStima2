@@ -27,11 +27,18 @@ namespace TubesStimaVisual
                 temp.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Circle;
                 if(graphElement.timeInfected != GraphElement.WAKTUMASYARAKATBELUMTERINFEKSI)
                 {
-                    temp.Attr.FillColor = Microsoft.Msagl.Drawing.Color.DarkSlateBlue;
+                    temp.Attr.FillColor = Microsoft.Msagl.Drawing.Color.Blue;
                 }
                 foreach (TrailElement trailElement in graphElement.trails)
                 {
-                    graph.AddEdge(Char.ToString(node), Char.ToString(trailElement.trail));
+                    if(graphElement.cekPenyebaranKe(trailElement.trail) > 1)
+                    {
+                        graph.AddEdge(Char.ToString(node), Char.ToString(trailElement.trail)).Attr.Color = Microsoft.Msagl.Drawing.Color.DarkBlue;
+                    }
+                    else
+                    {
+                        graph.AddEdge(Char.ToString(node), Char.ToString(trailElement.trail)).Attr.Color = Microsoft.Msagl.Drawing.Color.Black;
+                    }
                 }
             }
 
