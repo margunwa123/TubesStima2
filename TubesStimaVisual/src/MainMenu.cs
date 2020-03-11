@@ -156,6 +156,10 @@ namespace TubesStimaVisual
             {
                 MessageBox.Show(indexOutOfRangeException.Message);
             }
+            catch (FormatException formatException)
+            {
+                MessageBox.Show(formatException.Message);
+            }
         }
     }
 }

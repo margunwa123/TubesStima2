@@ -16,12 +16,18 @@ namespace TubesStimaVisual.src.FileReaderClass
             char city;
             if (linesInFile.Length > 0)
             {
+                try { 
                 for (int i = 1; i < linesInFile.Length; i++)
+                    {
+                        Console.WriteLine(linesInFile[i]);
+                        city = linesInFile[i][0];
+                        population = int.Parse(linesInFile[i].Substring(2));
+                        populationPerCity.Add(city, population);
+                    }
+                }
+                catch (FormatException)
                 {
-                    Console.WriteLine(linesInFile[i]);
-                    city = linesInFile[i][0];
-                    population = int.Parse(linesInFile[i].Substring(2));
-                    populationPerCity.Add(city, population);
+                    throw new FormatException("File Populasi yang anda masukan salah format");
                 }
             }
         }
