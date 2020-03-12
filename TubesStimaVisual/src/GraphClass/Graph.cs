@@ -95,14 +95,16 @@ namespace TubesStimaVisual.src.GraphClass
             {
                 char kotaYangDikunjungi = q.Dequeue();
                 int sudahBerapaLamaTerinfeksi = waktu - nodes[kotaYangDikunjungi].timeInfected;
-                nodes[kotaYangDikunjungi].jumlahMasyarakatTerinfeksi = Rumus.getJumlahMasyarakatTerinfeksi(nodes[kotaYangDikunjungi], sudahBerapaLamaTerinfeksi);
+                int jumlahMasyarakatTerinfeksi = Rumus.getJumlahMasyarakatTerinfeksi(nodes[kotaYangDikunjungi], sudahBerapaLamaTerinfeksi);
+                int population = nodes[kotaYangDikunjungi].population;
+                nodes[kotaYangDikunjungi].jumlahMasyarakatTerinfeksi = jumlahMasyarakatTerinfeksi;
                 foreach(TrailElement trailEl in nodes[kotaYangDikunjungi].trails)
                 {
                     if(nodes[kotaYangDikunjungi].cekPenyebaranKe(trailEl.trail) > 1)
                     {
-                        //rumus : hari kapan tersebar = floor(1/ (jmlmasyarakatterinfeksi_kota_asal * kemungkinan_travel_ke_tujuan)
-                        int hariTersebar = ((int)(1 / nodes[kotaYangDikunjungi].jumlahMasyarakatTerinfeksi * trailEl.probability)) + 1;
-                        if((hariTersebar < nodes[trailEl.trail].timeInfected) || (nodes[trailEl.trail].timeInfected == GraphElement.WAKTUMASYARAKATBELUMTERINFEKSI))
+                        int hariTersebar = (int) ( 4 * Math.Log((population - 1) / (population * trailEl.probability)) ) + 1;
+                        Console.WriteLine("Hari tersebar " + kotaYangDikunjungi + " ke " + trailEl.trail + " adalah " + hariTersebar);
+                        if ((hariTersebar < nodes[trailEl.trail].timeInfected) || (nodes[trailEl.trail].timeInfected == GraphElement.WAKTUMASYARAKATBELUMTERINFEKSI))
                         {
                             nodes[trailEl.trail].timeInfected = hariTersebar;
                             q.Enqueue(trailEl.trail);

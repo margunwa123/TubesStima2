@@ -12,7 +12,6 @@ namespace TubesStimaVisual.src.GraphClass
 
         public static int getJumlahMasyarakatTerinfeksi(GraphElement graphElement, int waktu)
         {
-            Console.WriteLine("timeinfected: " + graphElement.timeInfected);
             if(graphElement.timeInfected == GraphElement.WAKTUMASYARAKATBELUMTERINFEKSI)
             {
                 return 0;
@@ -20,9 +19,7 @@ namespace TubesStimaVisual.src.GraphClass
             else
             {
                 double populasiGraph = graphElement.population;
-                Console.WriteLine("populasi graph : " + populasiGraph);
                 double denominator = 1 + ((populasiGraph - 1) * Math.Pow(Math.E, -(GAMMA * (waktu))));
-                Console.WriteLine("denominator : " + denominator);
                 return (int) (populasiGraph / denominator);
             }
         }
@@ -31,5 +28,6 @@ namespace TubesStimaVisual.src.GraphClass
         {
             return (masyarakatTerinfeksi * peluangPerjalanan >= 1);
         }
+
     }
 }
